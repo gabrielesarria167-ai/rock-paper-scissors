@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <title>Rock, Paper, Scissors</title>
-        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
-    </head>
-    <body>
-        <script src = "script.js">
-        </script>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 id = "title">ROCK, PAPER, SCISSORS</h1>
+    <form id = "form">
+        <label for = "rounds" id = "roundsText">Insert the number of games you want to play</label>
+        <div id = "inputForm">
+            <input type = "number" name = "rounds" id = "rounds">
+            <button id = "confirm">Confirm</button>
+        </div>
+    </form>
+    <div id="choiceButtons">
+        <button id="rock" class = "unactive"></button>
+        <button id="paper" class = "unactive"></button>
+        <button id="scissors" class = "unactive"></button>
+    </div>
+    <div id="log">
+    </div>
+    
+</body>
+
 </html>

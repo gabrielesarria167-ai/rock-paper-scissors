@@ -1,0 +1,84 @@
+body{
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* TITLE */
+
+#title{
+    box-sizing: border-box;
+    font-size: 3em;
+    margin: 0;
+    padding: 20px 0px 20px 10px;
+}
+
+/* ROUNDS SELECTION */
+
+#form{
+    font-weight:bold;
+    box-sizing: border-box;
+    padding: 30px 0px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#inputForm{
+    box-sizing: border-box;
+    width: 50vw;
+    max-width: 350px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    height: 30px;
+}
+#rounds{
+    box-sizing: border-box;
+    flex:2;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+#confirm{
+    flex:1;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* BUTTONS */
+
+#choiceButtons{
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 10px;
+    padding: 30px;
+}
+#rock,#paper,#scissors{
+    max-height: 30vh;
+    align-self: center;
+    font-weight: bold;
+    height:30%;
+    cursor: pointer;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+}
+#rock{
+    background-image: url(images/rock.png);
+}
+#paper{
+    background-image: url(images/paper.png);
+}
+#scissors{
+    background-image: url(images/scissors.png);
+}
+.unactive{
+    display: none;
+}
