@@ -15,10 +15,10 @@ function readRounds(event) { // Function that sets the game rounds based on the 
     while (inputRounds.value <= 0) {
         negativeRound.style.display = "block";
         (inputRounds.value == 0) ? negativeRound.textContent = "0 rounds? really?" :
-        (inputRounds.value >= -5) ? negativeRound.textContent = "Hey, you really hate playing rock, paper, scissors huh..." :
-        (inputRounds.value >= -10) ? negativeRound.textContent = "Oh so you REALLY hate playing it..." :
-        (inputRounds.value >= -20) ? negativeRound.textContent = "Ok ok sorry dude I didn't know you hated this game so much... " :
-        negativeRound.textContent = "Just leave bro...";
+            (inputRounds.value >= -5) ? negativeRound.textContent = "Hey, you really hate playing rock, paper, scissors huh..." :
+                (inputRounds.value >= -10) ? negativeRound.textContent = "Oh so you REALLY hate playing it..." :
+                    (inputRounds.value >= -20) ? negativeRound.textContent = "Ok ok sorry dude I didn't know you hated this game so much... " :
+                        negativeRound.textContent = "Just leave bro...";
         inputRounds.value = '';
         inputRounds.focus();
         return;
@@ -28,27 +28,40 @@ function readRounds(event) { // Function that sets the game rounds based on the 
     choices.forEach((item) => item.classList.toggle("unactive"));
 }
 
-function playRound() { // function that gets called on button click, plays a round
+function playRound(rounds) { // function that gets called on button click, plays a round
     if (playerChoice === undefined) return;
+    console.log(rounds);
     let computerChoice = getComputerChoice();
     switch (true) {
         case playerChoice === computerChoice:
-            gameResult.textContent = "You won!";
+            roundResult.textContent = "You won!";
+            totalWins++;
             break;
         case (playerChoice === "rock" && computerChoice === "paper"):
         case (playerChoice === "paper" && computerChoice === "scissors"):
         case (playerChoice === "scissors" && computerChoice === "rock"):
-            gameResult.textContent = "You lost..";
+            roundResult.textContent = "You lost..";
+            totalLosses++;
             break;
         case (playerChoice === "rock" && computerChoice !== "paper"):
         case (playerChoice === "paper" && computerChoice !== "scissors"):
         case (playerChoice === "scissors" && computerChoice !== "rock"):
-            gameResult.textContent = "Its a tie!";
+            roundResult.textContent = "Its a tie!";
+            totalTies++;
             break;
+    }
+    if (rounds === 0) {
+        printEndResult();
+        return;
     }
 }
 
+function printEndResult() {
+    gameResult.textContent = `Game over! The final score is: ${totalWins} wins, ${totalTies} ties, and ${totalLosses} losses!`;
+    choices.forEach((item) => item.classList.toggle("unactive"));
+}
 
+let totalWins = 0, totalLosses = 0, totalTies = 0;
 let rounds;
 let playerChoice;
 const choices = document.querySelectorAll("#choiceButtons>button");
@@ -56,13 +69,15 @@ const logList = document.querySelector("#log");
 const confirm = document.querySelector("#confirm");
 let inputRounds = document.querySelector("#rounds");
 let negativeRound = document.querySelector("#errorMsg");
-let gameResult = document.querySelector("#gameLog");
+let roundResult = document.querySelector("#gameLog");
+let gameResult = document.querySelector("#gameResult");
 
 confirm.addEventListener("click", (e) => readRounds(e)); // on click of the confirm button calls the readRounds callback fn
 choices.forEach((item) => {
     item.addEventListener("click", () => {
         playerChoice = item.id; // sets the player choice based on which button he clicked
-        playRound();
+        rounds--;
+        playRound(rounds);
     });
 });
 
