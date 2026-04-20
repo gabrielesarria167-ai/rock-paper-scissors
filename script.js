@@ -13,35 +13,37 @@ function getComputerChoice() { // Function that gives the cpu a random choice be
 function readRounds(event) { // Function that sets the game rounds based on the input value
     event.preventDefault();
     while (inputRounds.value <= 0) {
-        (inputRounds.value == 0)? negativeRound.textContent = "0 rounds? really?":
-        (inputRounds.value >= -5)?negativeRound.textContent = "Hey, you really hate playing rock, paper, scissors huh...":
-        (inputRounds.value >= -10)? negativeRound.textContent ="Oh so you REALLY hate playing it...":
-        (inputRounds.value >= -20)? negativeRound.textContent = "Ok ok sorry dude I didn't know you hated this game so much... ":
+        negativeRound.style.display = "block";
+        (inputRounds.value == 0) ? negativeRound.textContent = "0 rounds? really?" :
+        (inputRounds.value >= -5) ? negativeRound.textContent = "Hey, you really hate playing rock, paper, scissors huh..." :
+        (inputRounds.value >= -10) ? negativeRound.textContent = "Oh so you REALLY hate playing it..." :
+        (inputRounds.value >= -20) ? negativeRound.textContent = "Ok ok sorry dude I didn't know you hated this game so much... " :
         negativeRound.textContent = "Just leave bro...";
         inputRounds.value = '';
         inputRounds.focus();
         return;
     }
+    negativeRound.style.display = "none";
     rounds = inputRounds.value;
     choices.forEach((item) => item.classList.toggle("unactive"));
 }
 
-function playRound(){ // function that gets called on button click, plays a round
-    if(playerChoice === undefined) return;
+function playRound() { // function that gets called on button click, plays a round
+    if (playerChoice === undefined) return;
     let computerChoice = getComputerChoice();
-    switch(true){
+    switch (true) {
         case playerChoice === computerChoice:
-            alert("tie");
+            gameResult.textContent = "You won!";
             break;
         case (playerChoice === "rock" && computerChoice === "paper"):
         case (playerChoice === "paper" && computerChoice === "scissors"):
         case (playerChoice === "scissors" && computerChoice === "rock"):
-            alert("lose");
+            gameResult.textContent = "You lost..";
             break;
         case (playerChoice === "rock" && computerChoice !== "paper"):
         case (playerChoice === "paper" && computerChoice !== "scissors"):
         case (playerChoice === "scissors" && computerChoice !== "rock"):
-            alert("win");
+            gameResult.textContent = "Its a tie!";
             break;
     }
 }
@@ -54,13 +56,14 @@ const logList = document.querySelector("#log");
 const confirm = document.querySelector("#confirm");
 let inputRounds = document.querySelector("#rounds");
 let negativeRound = document.querySelector("#errorMsg");
+let gameResult = document.querySelector("#gameLog");
 
 confirm.addEventListener("click", (e) => readRounds(e)); // on click of the confirm button calls the readRounds callback fn
 choices.forEach((item) => {
     item.addEventListener("click", () => {
         playerChoice = item.id; // sets the player choice based on which button he clicked
         playRound();
-    }); 
+    });
 });
 
 

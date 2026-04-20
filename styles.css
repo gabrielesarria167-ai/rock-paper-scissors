@@ -46,7 +46,7 @@ body{
     background-color: white;
     font-weight: bold;
 }
-#errorMsg{
+#errorMsg, #gameLog{
     padding: 10px;
     margin: 0;
     margin-top: -20px;
