@@ -7,17 +7,35 @@
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link href="logo.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="logo.ico" rel="apple-touch-icon" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+    </style>
 </head>
 
 <body>
-    <h1></h1>
-    <form>
-        <label></label>
-        <div>
-            <input>
-            <button></button>
+    <div id="header">
+        <img src="images/logo.png" id="logo">
+        <h1 id="title">ROCK, PAPER, SCISSORS</h1>
+    </div>
+    <div id="gameResult"></div>
+    <form id="form">
+        <label for="rounds" id="round-text">Select the number of rounds to play</label>
+        <div id="round-selection">
+            <input type="number" name="rounds" id="input">
+            <button id="confirm-button">Confirm</button>
         </div>
     </form>
+    <div id="buttons" class = "hidden">
+        <button id="rock"></button>
+        <button id="paper"></button>
+        <button id="scissors"></button>
+    </div>
+    <div id="footer">
+        <button class="footer-icon"></button>
+        <p id="footer-text">Copyright &copy Gabriele Sarria 2026</p>
+    </div>
 </body>
 
 </html>
