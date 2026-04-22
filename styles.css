@@ -9,13 +9,14 @@ body {
     margin: 0;
 }
 
-.hidden{
+.hidden {
     position: absolute;
     visibility: hidden;
 }
 
 /* HEADER */
-#header{
+
+#header {
     display: flex;
     gap: 10px;
 
@@ -24,17 +25,17 @@ body {
     padding: 10px;
 
     box-sizing: border-box;
-        box-shadow: 1px 0px 10px black;
+    box-shadow: 1px 0px 10px black;
     background-color: rgba(237, 225, 161, 0.82);
 }
 
-#logo{
+#logo {
     aspect-ratio: 1/1;
     height: 80%;
     align-self: center;
 }
 
-#title{
+#title {
     height: 80%;
     align-self: center;
 
@@ -45,7 +46,7 @@ body {
 
 /* FOOTER */
 
-#footer{
+#footer {
     width: 100vw;
     height: 5vh;
     padding: 2px;
@@ -61,7 +62,7 @@ body {
     justify-content: center;
 }
 
-.footer-icon{
+.footer-icon {
     background: 0;
     border: 0;
     padding: 0;
@@ -78,14 +79,14 @@ body {
     cursor: pointer;
 }
 
-#footer-text{
+#footer-text {
     align-self: center;
     padding-top: 5px;
 }
 
 /* FORM */
 
-#form{
+#form {
     border: 1px solid black;
     box-shadow: 2px 2px 6px black;
     padding: 20px;
@@ -102,12 +103,12 @@ body {
     margin-top: 35vh;
 }
 
-#round-selection{
+#round-selection {
     display: flex;
     gap: 5px;
 }
 
-#input{
+#input {
     box-sizing: border-box;
     padding: 5px;
 
@@ -116,9 +117,9 @@ body {
     background: rgba(190, 224, 95, 0.309);
 
     flex: 1;
-}   
+}
 
-#confirm-button{
+#confirm-button {
     box-sizing: border-box;
 
     border: 1px solid black;
@@ -128,4 +129,46 @@ body {
     font-weight: bold;
 
     cursor: pointer;
+}
+
+/* GAME BUTTONS */
+
+#buttons {
+    border: 2px solid black;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    height: 80vh;
+    padding: 20px;
+}
+
+#buttons > *{
+    flex: 1;
+    align-self: center;
+
+    aspect-ratio: 1/1;
+    max-height: 255px;
+    max-width: 255px;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#rock{
+    background-image: url(images/rock.png);
+}
+
+#paper{
+    background-image: url(images/paper.png);
+}
+
+#scissors{
+    background-image: url(images/scissors.png);
 }
