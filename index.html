@@ -19,18 +19,21 @@
         <img src="images/logo.png" id="logo">
         <h1 id="title">ROCK, PAPER, SCISSORS</h1>
     </div>
-    <div id="gameResult"></div>
-    <form id="form" class="hidden">
+    <form id="form">
         <label for="rounds" id="round-text">Select the number of rounds to play</label>
         <div id="round-selection">
-            <input type="number" name="rounds" id="input">
+            <input type="number" name="rounds" id="input" > <!--placeholder: for labels-->
             <button id="confirm-button">Confirm</button>
         </div>
     </form>
-    <div id="buttons">
-        <button id="rock"></button>
-        <button id="paper"></button>
-        <button id="scissors"></button>
+    <div id = "gameWindow" class = "hidden">
+        <p id = "gameText">Make your choice!</p>
+        <div id = "buttons">
+            <button id="rock"></button>
+            <button id="paper"></button>
+            <button id="scissors"></button>
+        </div>
+        <div id="gameResult"></div>
     </div>
     <div id="footer">
         <button class="footer-icon"></button>
