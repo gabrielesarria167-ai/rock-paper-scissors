@@ -9,3 +9,22 @@ function getComputerChoice() { // Function that gives the cpu a random choice be
             return "scissors";
     }
 }
+
+function setTotalRounds(event){
+    event.preventDefault();
+    totalRounds = input.value;
+    formWindow.classList.toggle("hidden");
+    gameWindow.classList.toggle("hidden");
+}
+
+// Total rounds selection variables
+
+const formWindow = document.querySelector("#form");
+const confirmButton = document.querySelector("#confirm-button");
+const input = document.querySelector("#input");
+const gameWindow = document.querySelector("#gameWindow");
+
+let totalRounds = 0;
+input.max = 9, input.min = 1, input.step = 2, input.placeholder = "1";
+
+confirmButton.addEventListener("click", (e) => setTotalRounds(e));
