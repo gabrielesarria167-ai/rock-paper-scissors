@@ -114,7 +114,7 @@ body {
 
     border: 1px solid black;
     border-radius: 15px;
-    background: rgba(190, 224, 95, 0.309);
+    background: rgba(207, 245, 100, 0.313);
 
     flex: 1;
 }
@@ -125,7 +125,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
 
-    background: rgba(227, 214, 168, 0.394);
+    background: rgba(243, 226, 165, 0.42);
     font-weight: bold;
 
     cursor: pointer;
@@ -133,19 +133,52 @@ body {
 
 /* GAME BUTTONS */
 
-#buttons {
-    border: 2px solid black;
+#gameWindow {
     box-sizing: border-box;
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 
     height: 80vh;
     padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
-#buttons > *{
+#gameText {
+    box-sizing: border-box;
+    margin: 0;
+
+    font-size: clamp(20px, 40px, 40px);
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+    height: 7%;
+    min-height: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#buttons {
+    align-self: center;
+
+    border-radius: 20px;
+    background-color: rgba(0, 255, 132, 0.175);
+    box-shadow: 2px 2px 7px black;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    width: 90%;
+    max-width: 830px;
+    padding: 20px;
+}
+
+#buttons>* {
     flex: 1;
     align-self: center;
 
@@ -159,16 +192,29 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 1px 1px 5px black;
 }
 
-#rock{
+#rock {
     background-image: url(images/rock.png);
 }
 
-#paper{
+#paper {
     background-image: url(images/paper.png);
 }
 
-#scissors{
+#scissors {
     background-image: url(images/scissors.png);
+}
+
+#gameResult {
+    margin: 0 auto;
+    margin-bottom: -40px;
+    box-sizing: border-box;
+    height: 40px;
+
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: clamp(20px, 30px, 40px);
 }
