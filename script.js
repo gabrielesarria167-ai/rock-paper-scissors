@@ -113,6 +113,14 @@ let gameResult = document.querySelector("#gameResult");
 let playerChoice = '';
 let wins = 0, losses = 0, ties = 0;
 
+// Footer Icons
+
+const ghIcon = document.querySelector(".footer-icon")
+console.log(ghIcon);
+ghIcon.addEventListener("click", () => {
+    location.href = "https://github.com/gabrielesarria167-ai";
+})
+
 confirmButton.addEventListener("click", (e) => setTotalRounds(e));
 gameButtons.forEach((item) => {
     item.addEventListener("click", () => { // everytime a game button is clicked, plays a round until it reaches 1
