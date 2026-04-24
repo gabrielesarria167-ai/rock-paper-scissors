@@ -10,10 +10,10 @@ function getComputerChoice() { // Function that gives the cpu a random choice be
     }
 }
 
-function setTotalRounds(event) {
+function setTotalRounds(event) { // Reads input value and stores it as totalRounds
     event.preventDefault();
     totalRounds = input.value;
-    formWindow.classList.toggle("hidden");
+    formWindow.classList.toggle("hidden"); // switch from the form window to the game window
     gameWindow.classList.toggle("hidden");
 }
 
@@ -74,7 +74,7 @@ function printMatchResult(wins, losses, ties) {
     }
 }
 
-function playMatch(rounds) {
+function playMatch(rounds) { // honestly forgot my thought process during this. Still, it works.
     if (rounds >= 1) {
         switch (playRound(getComputerChoice(), playerChoice)) {
             case "win":
@@ -115,7 +115,7 @@ let wins = 0, losses = 0, ties = 0;
 
 confirmButton.addEventListener("click", (e) => setTotalRounds(e));
 gameButtons.forEach((item) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", () => { // everytime a game button is clicked, plays a round until it reaches 1
         playerChoice = item.id;
         playMatch(totalRounds);
         totalRounds--;
