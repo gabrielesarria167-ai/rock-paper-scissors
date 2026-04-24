@@ -142,14 +142,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 #gameText {
     box-sizing: border-box;
     margin: 0;
 
-    font-size: clamp(20px, 40px, 40px);
+    font-size: clamp(10px, 25px, 25px);
     font-family: sans-serif;
     font-weight: bold;
     text-align: center;
@@ -173,8 +173,8 @@ body {
     justify-content: center;
     gap: 10px;
 
-    width: 90%;
-    max-width: 830px;
+    width: 60%;
+    max-width: 630px;
     padding: 20px;
 }
 
@@ -209,6 +209,7 @@ body {
 
 #gameResult {
     margin: 0 auto;
+    margin-top: 20px;
     margin-bottom: -40px;
     box-sizing: border-box;
     height: 40px;
@@ -216,5 +217,5 @@ body {
     text-align: center;
     font-family: sans-serif;
     font-weight: 500;
-    font-size: clamp(20px, 30px, 40px);
+    font-size: clamp(10px, 20px, 20px);
 }
